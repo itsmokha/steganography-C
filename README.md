@@ -1,9 +1,3 @@
-# Who I am
-
-- Name: Mohammed Omar Khan
-- Student ID: H00358011
-- Student username: mk2008
-
 # Program design
 The program takes in  command line arguments, a flag to check whether to encode(e) or decode(d) and the
 location of the file on which the encode/decode is to be performed. The file locations are passed as a
