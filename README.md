@@ -1,3 +1,6 @@
+# Steganography in C for PPM images
+This is a program written in C to encode text within PPM images. Steganography is a technique used to encode sensitive messages in other forms of media such as images, videos, and audio files. 
+
 # Program design
 The program takes in  command line arguments, a flag to check whether to encode(e) or decode(d) and the
 location of the file on which the encode/decode is to be performed. The file locations are passed as a
@@ -11,6 +14,9 @@ in a random pixel's green value. After that, each character of the text separate
 part of the pixel. While decoding, the length of the string is taken by calling the random function
 using the same seed, which is then used to assign the correct memory for the text variable. Then,using
 the same set of randomized pixel locations, it extracts the ASCII values of the encoded message. 
+
+The main advantage of this program design is that it ensures security of the message. Instead of comparing two images, the program uses a password to ensure that the message cannot be decoded by anyone other than the sender and the intended receipient(s).
+
 
 After the encoding is complete, the showPPM function is called to print the values to the standard output, which can be redirected to any file.. 
 
