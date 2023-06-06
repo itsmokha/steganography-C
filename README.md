@@ -29,4 +29,8 @@ are capable of storing variables of different data types so it's easier to store
 and grouping them. This makes it preferable to store all the values from the PPM file in one
 variable. A two-dimensional matrix is used to store the values of each pixel element. The matrix is of
 dimensions width and height given in the ppm file. This ensures that all pixel values are correctly
-stored at the correct position without affecting the image itself.
+stored at the correct position without affecting the image itself
+
+# Future Work
+
+[] Create a TUI application with graphics to make it more user-friendly
