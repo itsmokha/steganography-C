@@ -1,0 +1,4 @@
+build_steganography:
+   stage: build
+   script:
+      - gcc -std=c99 -o steg steg.c
