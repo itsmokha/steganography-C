@@ -1,82 +1,32 @@
-# F28HS Coursework 1
+# Who I am
 
-This is the starter code for F28HS coursework 1: C programming.
+- Name: Mohammed Omar Khan
+- Student ID: H00358011
+- Student username: mk2008
 
-## Getting the code
+# Program design
+The program takes in  command line arguments, a flag to check whether to encode(e) or decode(d) and the
+location of the file on which the encode/decode is to be performed. The file locations are passed as a
+char array to the loadPPMfromfile function which opens the file and ensures that the file has
+successfully opened before passing the opened file to getPPM to parse the values from the file to the
+correct variables in the PPM structure.
 
-You must first **FORK** the project from:
+The encoding and decoding take a seed from the user to encode and decode the message. After the 
+user inputs the seed, the srand function is called on the seed. While encoding, the length of the string is stored
+in a random pixel's green value. After that, each character of the text separately replaces the value stored in the red
+part of the pixel. While decoding, the length of the string is taken by calling the random function
+using the same seed, which is then used to assign the correct memory for the text variable. Then,using
+the same set of randomized pixel locations, it extracts the ASCII values of the encoded message. 
 
-https://gitlab-student.macs.hw.ac.uk/f28hs-2020-21/f28hs-2020-21-staff/f28hs-2020-21-cwk1-c
+After the encoding is complete, the showPPM function is called to print the values to the standard output, which can be redirected to any file.. 
 
-then clone your fork to your computer.
+# Choice of data structures and algorithms
 
-We recommend that you use the command line for using the `git` command
-to version control `steg.c` as you progress.
-
-For this, use a terminal window (__changing `<username>` to your
-Heriot-Watt username__):
-
-```bash
-git clone git@gitlab-student.macs.hw.ac.uk:<username>/f28hs-2020-21-cwk1-c.git
-
-```
-
-Alternatively, you can clone your fork using the same URL, using any
-modern IDE development environment. e.g. how we used GitLab in F28SG
-and other Java-based courses to clone your GitLab projects. 
-
-## Compiling
-
-You can compile the `steg.c` file with the `gcc` compiler:
-
-```bash
-gcc -o steg steg.c
-
-```
-
-You're now ready! Now complete the coursework 1 lab sheet, which is
-available on Vision.
-
-You can use which ever development environment you are comfortable
-with. There are many C development environments available for Linux
-including Emacs, Vim, Netbeans, Eclipse, `gedit` and `kwrite`. We
-recommend that you keep it simple: a text editor, a terminal window
-and `gcc` is enough.
-
-## Version control your work
-
-To understand the life cycle of a file in a git repository, watch from
-15m 21s of [this
-video](https://web.microsoftstream.com/video/407df13c-18b7-4163-a1e3-90e5ceb54585?st=921).
-
-The most useful git operation are `add`, `commit` and `push`.
-
-`git add` allows you to add a file to the staging area to be included
-in the next commit you create. E.g.
-
-    git add steg.c
-
-Once you have one or multiple files in the staging area, you can then
-create a commit, e.g.
-
-    git commit -m "Implements the encode function"
-
-Finally, push that commit to the MACS GitLab Student server:
-
-    git push
-
-## Submission
-
-Your submission should comprise two files:
-
-1. `steg.c` which is your C implementation of steganography.
-2. `Report.md` which is your write up of your `steg.c` solution.
-
-Create and push commits as you work through the questions. Create
-small commits frequently during and after each question, and push them
-to GitLab. This is a good software engineering practise.
-
-__Importantly__, you must create a commit for your final solution and
-push it to GitLab within the submission deadline. Your `Report.md` and
-`steg.c` file will be marked based on their version at the coursework
-1 deadline.
+The data structures used here are the structures (for pixels and ppm),arrays(to store the pixels) and a linked list(to store
+comments). The linked list is preferred for storing values dynamically. Since the length of the comment is unknown beforehand,
+the linked list can store the values as they are taken from the file,without needing to allocate unneccesary memory. The structures 
+are capable of storing variables of different data types so it's easier to store variables of multiple data types
+and grouping them. This makes it preferable to store all the values from the PPM file in one
+variable. A two-dimensional matrix is used to store the values of each pixel element. The matrix is of
+dimensions width and height given in the ppm file. This ensures that all pixel values are correctly
+stored at the correct position without affecting the image itself.
